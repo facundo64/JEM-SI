@@ -1,0 +1,39 @@
+You are an agent deployed by the Ruflo swarm working as CODER-1 for JEM-SI.
+
+Build a COMPLETE professional landing page for JEM-SI - a metalwork/steel architecture company from Buenos Aires, Argentina specialized in: carpinteria metalica, estructuras metalicas, montaje en obra.
+
+TECH: Next.js (already set up), Tailwind CSS v4, framer-motion, lucide-react (all installed in package.json).
+
+STEP 1: Create src/lib/dictionaries.ts with ALL text content in Spanish AND English (bilingual).
+Include: nav links, hero (title, subtitle, CTAs), about (company history - family origins in industrial piping, 3 paragraphs), services (3 categories: Carpinteria Metalica with items portones/puertas/rejas/barandas/escaleras/pergolas/fachadas, Construccion de Estructuras with galpones/viviendas/ampliaciones/soportes/desarrollos inmobiliarios, Montaje en Obra with colocacion/soldadura/ajustes/coordinacion/resolucion tecnica), projects (6 items), values (Precision/Cumplimiento/Calidad/Compromiso with descriptions), contact form labels and info, footer text.
+
+STEP 2: Create src/lib/language-context.tsx - React context provider with useLanguage hook for ES/EN toggle. Default locale: es.
+
+STEP 3: Create all components in src/components/:
+- Navbar.tsx: fixed top, dark bg, JEM-SI logo with amber accent, nav links, Globe icon language toggle
+- Hero.tsx: full viewport height, gradient dark background with grid overlay, big animated title, subtitle, 2 CTA buttons
+- About.tsx: badge, title, 3 description paragraphs, stats grid (15+ years, 500+ projects, 200+ clients, 30+ team) with icons
+- Services.tsx: 3 cards with Hammer/Building2/HardHat icons and CheckCircle2 item lists
+- Projects.tsx: 6 card grid with gradient placeholder backgrounds, category badges, hover effects
+- Values.tsx: 4 centered cards with Crosshair/CalendarCheck/Gem/Handshake icons
+- Contact.tsx: left form (name, email, phone, textarea, send button), right info cards (location, email, phone, hours) and map placeholder
+- Footer.tsx: brand, links column, contact info, CTA section, copyright
+
+STEP 4: Update src/app/page.tsx - use client, wrap everything in LanguageProvider, compose all sections
+
+STEP 5: Update src/app/layout.tsx - metadata title "JEM-SI | Soluciones Metalurgicas de Alto Nivel", dark html class, zinc-950 bg
+
+STEP 6: Update src/app/globals.css - import tailwindcss, dark vars, smooth scrolling, custom selection color, scroll-margin-top
+
+STEP 7: Run npm run build to verify everything compiles
+
+DESIGN SYSTEM:
+- Background: bg-zinc-950
+- Cards: bg-zinc-900 with border-zinc-800
+- Accent: amber-500 to orange-600 gradient
+- Text: white for headings, zinc-300/400 for body
+- Badges: amber-500/10 bg, amber-500/20 border, amber-400 text
+- Hover effects: border-amber-500/30, amber gradient overlays
+- Animations: framer-motion with useInView, staggered delays
+- Responsive: mobile-first with sm/md/lg breakpoints
+- Font: Use the existing Geist font from layout.tsx
