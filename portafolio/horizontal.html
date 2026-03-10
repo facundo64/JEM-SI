@@ -30,8 +30,15 @@
   <style>
     @media print {
       @page { size: A4 landscape; margin: 0; }
-      html, body { width: 297mm; height: 210mm; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .page-a4-h { page-break-after: always; page-break-inside: avoid; }
+      html, body { width: 100%; height: auto; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-a4-h { 
+        width: 297mm; 
+        height: 209mm; 
+        page-break-after: always; 
+        page-break-inside: avoid; 
+        margin: 0;
+        overflow: hidden;
+      }
       .page-a4-h:last-child { page-break-after: auto; }
     }
     @media screen {
