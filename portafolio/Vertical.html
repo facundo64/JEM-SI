@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=210mm, initial-scale=1.0" />
+  <title>JEM-SI — Portafolio Editorial Vertical</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Montserrat', 'system-ui', 'sans-serif'] },
+          colors: {
+            acero: '#181818',
+            acero_light: '#2A2A2A',
+            naranja: '#FF4500',
+            blanco: '#FFFFFF',
+            gris: '#F5F5F5',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    @media print {
+      @page { size: A4; margin: 0; }
+      html, body { width: 210mm; height: 297mm; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-a4 { page-break-after: always; page-break-inside: avoid; }
+      .page-a4:last-child { page-break-after: auto; }
+    }
+    @media screen {
+      body { background: #D0D0D0; padding: 40px 0; }
+      .page-a4 { margin: 0 auto 40px auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+    }
+    
+    .page-a4 { 
+      width: 210mm; 
+      height: 297mm; 
+      overflow: hidden; 
+      position: relative; 
+      box-sizing: border-box; 
+      background: #FFFFFF; 
+    }
+    
+    .title-huge { font-size: 5rem; line-height: 0.85; letter-spacing: -0.05em; font-weight: 900; }
+    .title-large { font-size: 3.5rem; line-height: 0.9; letter-spacing: -0.03em; font-weight: 700; }
+    .text-micro { font-size: 8px; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 600; }
+    .text-body { font-size: 11px; line-height: 2.2; font-weight: 400; }
+    
+    .full-bleed { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+    .img-cover { width: 100%; height: 100%; object-fit: cover; }
+    
+    .number-indicator { font-size: 9px; letter-spacing: 0.2em; font-weight: 400; }
+  </style>
+</head>
+<body class="font-sans text-acero antialiased">
+
+  <!-- ═══ 01: PORTADA ULTRA MINIMALISTA ═══ -->
+  <div class="page-a4 bg-gris flex flex-col justify-between p-12">
+    <div class="flex justify-between items-start">
+      <div class="text-micro text-acero/40">JEM-SI © 2026</div>
+      <div class="text-micro text-acero/40 text-right">Plottier<br>Neuquén</div>
+    </div>
+    
+    <div class="flex-1 flex items-center justify-center relative">
+      <div class="absolute w-2 h-2 bg-naranja rounded-full"></div>
+    </div>
+
+    <div class="flex justify-between items-end">
+      <h1 class="text-acero font-bold text-3xl tracking-tighter">JEM-SI</h1>
+      <p class="text-micro text-acero/40 text-right max-w-[150px]">
+        Soluciones Integrales en Construcción & Montaje Metalúrgico
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ═══ 02: HERO FULL BLEED ═══ -->
+  <div class="page-a4 bg-acero relative">
+    <div class="full-bleed">
+      <img src="img/metalwork_hero.png" class="img-cover grayscale-[0.2] opacity-80 mix-blend-luminosity" />
+    </div>
+    
+    <div class="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-acero/90 to-transparent">
+      <h2 class="title-huge text-blanco mix-blend-overlay mb-8">CONSTRU<br>IMOS.</h2>
+      <div class="w-2/3 mb-4">
+        <p class="text-blanco/80 text-body mb-6">
+          Operamos como socios estratégicos de constructoras y estudios de arquitectura.
+        </p>
+        <div class="w-12 h-[1px] bg-naranja"></div>
+      </div>
+    </div>
+    
+    <div class="absolute top-12 left-12 number-indicator text-blanco/50">02 \ JEM-SI</div>
+  </div>
+
+
+  <!-- ═══ 03: QUIÉNES SOMOS ═══ -->
+  <div class="page-a4 bg-blanco flex flex-col">
+    <div class="h-[45%] p-12 flex flex-col justify-between border-b border-gris">
+      <div class="number-indicator text-acero/30">03 \ ABOUT</div>
+      <h2 class="title-large text-acero">PRECISIÓN<br>EN CADA<br>MILÍMETRO</h2>
+      <div>
+        <div class="w-2 h-2 bg-naranja mb-4"></div>
+        <p class="text-acero/80 text-sm font-medium italic max-w-sm">
+          "Nos integramos al proyecto arquitectónico como socio estratégico en la etapa de ejecución."
+        </p>
+      </div>
+    </div>
+    <div class="h-[55%] p-12 bg-gris/30 flex flex-col justify-center">
+      <div class="max-w-md mx-auto">
+        <p class="text-body text-acero/70 mb-8 font-medium">
+          JEM-SI es una empresa especializada en la ejecución integral de soluciones metalúrgicas en proyectos arquitectónicos y obras de mediana y gran escala.
+        </p>
+        <p class="text-body text-acero/60 mb-8">
+          Trabajamos junto a estudios de arquitectura, desarrolladores y constructoras, brindando soporte técnico, fabricación a medida y ejecución en obra con compromiso de calidad, precisión y cumplimiento.
+        </p>
+        <p class="text-body text-acero/60">
+          Nuestros orígenes en piping industrial nos llevaron a desarrollar un gran conocimiento en trabajos bajo plano, adaptarnos a la exigencia contemporánea y respetar el cumplimiento de plazos.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ 04: CAPACIDAD (TALLER) ═══ -->
+  <div class="page-a4 bg-blanco flex flex-col relative">
+    <div class="h-[60%] relative">
+      <img src="img/steel_workshop.png" class="img-cover grayscale-[0.8]" />
+      <div class="absolute inset-0 bg-naranja mix-blend-multiply opacity-20"></div>
+    </div>
+    
+    <div class="h-[40%] flex flex-col p-12 bg-acero">
+      <div class="number-indicator text-blanco/30 text-right mb-6">04 \ CAPACIDAD</div>
+      
+      <h3 class="text-blanco font-bold text-2xl tracking-tighter mb-4">FABRICACIÓN<br>EN TALLER PROPIO</h3>
+      <p class="text-body text-blanco/60 mb-6">
+        Equipamiento para corte, armado y soldadura de alta precisión.
+      </p>
+      <div class="w-full h-[1px] bg-blanco/10 mb-6"></div>
+      <ul class="space-y-3">
+        <li class="flex items-center gap-3"><span class="w-1 h-1 bg-naranja rounded-full"></span><span class="text-micro text-blanco/80">INTERPRETACIÓN DE PLANOS</span></li>
+        <li class="flex items-center gap-3"><span class="w-1 h-1 bg-naranja rounded-full"></span><span class="text-micro text-blanco/80">ASEGURAMIENTO DE CALIDAD</span></li>
+        <li class="flex items-center gap-3"><span class="w-1 h-1 bg-naranja rounded-full"></span><span class="text-micro text-blanco/80">NORMAS Y SEGURIDAD INDUSTRIAL</span></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ═══ 05: SERVICIO 01 ═══ -->
+  <div class="page-a4 bg-gris flex flex-col">
+    <div class="h-[50%] relative">
+      <img src="img/facade_project.png" class="img-cover object-center" />
+    </div>
+    <div class="h-[50%] p-12 flex flex-col bg-blanco">
+      <div class="number-indicator text-acero/30 mb-8">05 \ SERVICIOS [01]</div>
+      <h2 class="text-acero font-bold text-4xl tracking-tighter leading-none mb-4">CARPINTERÍA<br>METÁLICA</h2>
+      <div class="w-8 h-[2px] bg-naranja mb-6"></div>
+      <p class="text-body text-acero/60 mb-8">
+        Fabricación a medida de aberturas, cerramientos, barandas y frentes vidriados con perfilería de alta calidad.
+      </p>
+      <div class="grid grid-cols-1 gap-3 border-l border-acero/10 pl-4 mt-auto">
+        <div class="text-micro text-acero/80">PORTONES CORREDIZOS & PUERTAS METÁLICAS</div>
+        <div class="text-micro text-acero/80">CERRAMIENTOS PERIMETRALES & REJAS</div>
+        <div class="text-micro text-acero/80">FACHADAS ESPECIALES & ESTRUCTURAS LIVIANAS</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ 06: SERVICIO 02 ═══ -->
+  <div class="page-a4 bg-acero flex flex-col">
+    <div class="h-[50%] relative order-2">
+      <img src="img/industrial_warehouse.png" class="img-cover object-bottom opacity-90" />
+    </div>
+    <div class="h-[50%] p-12 flex flex-col bg-acero_light order-1">
+      <div class="number-indicator text-blanco/30 text-right mb-8">06 \ SERVICIOS [02]</div>
+      <h2 class="text-blanco font-bold text-4xl tracking-tighter leading-none mb-4">ESTRUCTURAS<br>METALÚRGICAS</h2>
+      <div class="w-8 h-[2px] bg-naranja mb-6"></div>
+      <p class="text-body text-blanco/60 mb-8">
+        Diseño y armado de estructuras metálicas para naves industriales y emprendimientos de gran escala.
+      </p>
+      <div class="grid grid-cols-1 gap-3 border-l border-blanco/10 pl-4 mt-auto">
+        <div class="text-micro text-blanco/80">GALPONES INDUSTRIALES</div>
+        <div class="text-micro text-blanco/80">AMPLIACIONES METÁLICAS & REFUERZOS</div>
+        <div class="text-micro text-blanco/80">ESTRUCTURAS PARA DESARROLLOS INMOBILIARIOS</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ 07: SERVICIO 03 ═══ -->
+  <div class="page-a4 bg-gris flex flex-col">
+    <div class="h-[55%] relative">
+      <img src="img/welding_closeup.png" class="img-cover object-center grayscale-[0.6]" />
+      <div class="absolute inset-0 bg-acero/20 mix-blend-multiply"></div>
+    </div>
+    <div class="h-[45%] p-12 flex flex-col bg-blanco">
+      <div class="number-indicator text-acero/30 mb-8">07 \ SERVICIOS [03]</div>
+      <h2 class="text-acero font-bold text-4xl tracking-tighter leading-none mb-4">MONTAJE<br>EN OBRA</h2>
+      <div class="w-8 h-[2px] bg-naranja mb-6"></div>
+      <p class="text-body text-acero/60 mb-8">
+        Servicio integral de montaje in situ con maquinaria especializada y extrema rigurosidad.
+      </p>
+      <div class="grid grid-cols-1 gap-3 border-l border-acero/10 pl-4 mt-auto">
+        <div class="text-micro text-acero/80">NIVELACIÓN DE ESTRUCTURAS & SOLDADURA (MIG/TIG)</div>
+        <div class="text-micro text-acero/80">TERMINACIONES TÉCNICAS</div>
+        <div class="text-micro text-acero/80">COORDINACIÓN DE GREMIOS IN SITU</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ 08: MANIFIESTO ═══ -->
+  <div class="page-a4 bg-acero flex flex-col p-12 relative overflow-hidden">
+    <div class="number-indicator text-blanco/30 mb-12">08 \ MANIFIESTO</div>
+    
+    <div class="flex-1 flex flex-col justify-center">
+      <h2 class="title-large text-blanco mb-16 border-b border-naranja pb-4 inline-block self-start">RIGOR<br>TÉCNICO</h2>
+      
+      <div class="space-y-10">
+        <div>
+          <h4 class="text-micro text-naranja mb-3">INGENIERÍA</h4>
+          <p class="text-body text-blanco/50">Lectura e interpretación de planos. Asesoramiento constructivo riguroso. Coordinación directa con dirección de obra y arquitectos.</p>
+        </div>
+        <div>
+          <h4 class="text-micro text-naranja mb-3">GESTIÓN</h4>
+          <p class="text-body text-blanco/50">Cumplimiento innegociable de cronogramas. Presupuestos claros. Responsabilidad, orden y limpieza extrema logística.</p>
+        </div>
+        <div>
+          <h4 class="text-micro text-naranja mb-3">EJECUCIÓN</h4>
+          <p class="text-body text-blanco/50">Aseguramiento de calidad y normas de seguridad industrial al 100%. Equipos homologados en soldadura. Terminaciones de autor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ 09: PROCESO ═══ -->
+  <div class="page-a4 bg-blanco p-12 flex flex-col">
+    <div class="mb-12">
+      <div class="number-indicator text-acero/30 mb-8">09 \ WORKFLOW</div>
+      <h2 class="title-large text-acero leading-none">PROCESO<br>ACTIVO</h2>
+    </div>
+    
+    <div class="flex-1 grid grid-cols-1 gap-6">
+      <div class="border-t border-acero pt-4">
+        <div class="text-3xl font-light text-acero/40 mb-2">01</div>
+        <h4 class="text-micro text-acero mb-2">RECEPCIÓN & ESTUDIO</h4>
+        <p class="text-body text-acero/60">Análisis paramétrico de documentación y planos. Cotización.</p>
+      </div>
+      <div class="border-t border-acero pt-4">
+        <div class="text-3xl font-light text-acero/40 mb-2">02</div>
+        <h4 class="text-micro text-acero mb-2">TALLER & CORTE</h4>
+        <p class="text-body text-acero/60">Fabricación bajo control numérico y conformado estructural.</p>
+      </div>
+      <div class="border-t border-acero pt-4">
+        <div class="text-3xl font-light text-acero/40 mb-2">03</div>
+        <h4 class="text-micro text-acero mb-2">SOLDADURA IN SITU</h4>
+        <p class="text-body text-acero/60">Montaje en terreno. Certificación de cordones y esfuerzos.</p>
+      </div>
+      <div class="border-t border-acero pt-4">
+        <div class="text-3xl font-light text-naranja mb-2">04</div>
+        <h4 class="text-micro text-naranja mb-2">HANDOVER</h4>
+        <p class="text-body text-acero/60">Inspección final. Integración espacial terminada.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ 10: GALERÍA ═══ -->
+  <div class="page-a4 bg-acero_light relative">
+    <div class="absolute inset-0 grid grid-rows-2">
+      <div class="w-full border-b border-acero opacity-90"><img src="img/finished_building.png" class="img-cover grayscale" /></div>
+      <div class="w-full border-t border-acero opacity-80"><img src="img/facade_project.png" class="img-cover" /></div>
+    </div>
+    
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="bg-naranja p-6">
+        <h2 class="text-blanco text-2xl font-bold tracking-widest text-center uppercase">Visión<br>Obras</h2>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-12 left-12 number-indicator text-blanco/80 mix-blend-difference">10 \ GALERÍA</div>
+  </div>
+
+
+  <!-- ═══ 11: CLIENTES & MARCAS FINALES ═══ -->
+  <div class="page-a4 bg-[#111111] p-12 flex flex-col relative overflow-hidden">
+    <div class="number-indicator text-blanco/30 mb-8 relative z-10">11 \ SOCIOS ESTRATÉGICOS</div>
+    
+    <!-- Constructoras (Fondo Tipográfico) -->
+    <div class="absolute inset-x-0 inset-y-1/4 flex flex-col justify-center gap-10 text-blanco/10 whitespace-nowrap opacity-60 mix-blend-screen -ml-12">
+      <h1 class="font-bold text-[45px] leading-none tracking-tighter uppercase transition-colors">DESARROLLO INMOBILIARIO AUSTRAL SA</h1>
+      <h1 class="font-bold text-[45px] leading-none tracking-tighter uppercase transition-colors pl-12 text-naranja/20">DYLARCO S.R.L. — LIKKE SA</h1>
+      <h1 class="font-bold text-[45px] leading-none tracking-tighter uppercase transition-colors pl-6">GROUP MANAGEMENT GROUP SA</h1>
+      <h1 class="font-bold text-[45px] leading-none tracking-tighter uppercase transition-colors pl-24">GRUPO MFT SA</h1>
+      <h1 class="font-bold text-[45px] leading-none tracking-tighter uppercase transition-colors pl-16 text-naranja/20">BASERVICIOS S.R.L.</h1>
+    </div>
+    
+    <div class="absolute bottom-40 right-12 text-right z-10">
+      <p class="text-body text-blanco/60 max-w-[200px]">
+        Confían en nuestra capacidad técnica para resolver la estructura de sus proyectos más exigentes.
+      </p>
+    </div>
+
+    <!-- Marcas Finales (Logos SVG) - Oculto temporalmente (class="hidden") hasta recibir los archivos -->
+    <div class="hidden absolute bottom-12 left-12 right-12 z-10 border-t border-blanco/10 pt-6">
+      <p class="text-[7px] text-blanco/40 uppercase tracking-[0.3em] mb-6">Marcas Finales de Proyectos</p>
+      <div class="flex items-center justify-between opacity-50 grayscale contrast-200">
+        <!-- McDonald's SVG -->
+        <svg height="24" viewBox="0 0 100 100" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M 20,80 C 20,20 45,20 50,50 C 55,20 80,20 80,80" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round"/></svg>
+        
+        <!-- Burger King Typographic SVG -->
+        <svg height="24" viewBox="0 0 120 100" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 10,30 Q 60,-10 110,30" fill="#fff"/>
+          <text x="60" y="55" font-family="Arial" font-weight="900" font-size="24" fill="#111" text-anchor="middle">BURGER</text>
+          <text x="60" y="75" font-family="Arial" font-weight="900" font-size="24" fill="#111" text-anchor="middle">KING</text>
+          <path d="M 10,80 Q 60,120 110,80" fill="#fff"/>
+        </svg>
+
+        <!-- Puma Logo PNG -->
+        <img src="img/puma-logo-png_seeklogo-304000.png" alt="Puma" class="h-6 object-contain brightness-0 invert" />
+
+        <!-- Mostaza Typographic SVG -->
+        <svg height="24" viewBox="0 0 100 30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="25" font-family="Arial, sans-serif" font-weight="900" font-size="28" letter-spacing="-2" fill="#fff">MOSTAZA</text>
+        </svg>
+        
+        <!-- Yenny SVG -->
+        <svg height="20" viewBox="0 0 70 30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="25" font-family="Georgia, serif" font-style="italic" font-weight="bold" font-size="26" fill="#fff">Yenny</text>
+        </svg>
+
+        <!-- Sarkany SVG -->
+        <svg height="18" viewBox="0 0 90 30" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="25" font-family="Arial, sans-serif" font-weight="300" font-size="22" letter-spacing="4" fill="#fff">SARKANY</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ 12: CONTRAPORTADA ═══ -->
+  <div class="page-a4 bg-blanco p-12 flex flex-col justify-between border-t-[8px] border-naranja relative">
+    <div class="flex justify-between items-start">
+      <div class="number-indicator text-acero/30">12 \ CONTACTO</div>
+    </div>
+    
+    <div class="flex-1 flex flex-col justify-center">
+      <div class="space-y-8">
+        <div>
+          <div class="text-micro text-acero/60 mb-2">DIRECCIÓN COMERCIAL</div>
+          <div class="text-sm font-semibold text-acero">LUCIANO F. ENRIQUE</div>
+        </div>
+        
+        <div>
+          <div class="text-micro text-acero/60 mb-2">ADMINISTRACIÓN & TÉCNICA</div>
+          <div class="text-sm font-semibold text-acero">JULIETA E. CHOCOBAR</div>
+        </div>
+        
+        <div>
+          <div class="text-micro text-acero/60 mb-2">CUIT</div>
+          <div class="text-sm font-light text-acero">30-71866889-8</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-auto pt-10">
+      <h1 class="title-large text-acero opacity-10 -ml-2 mb-2">JEM-SI</h1>
+      <p class="text-xl font-light text-acero tracking-widest">ventas@jem-si.com.ar</p>
+      <div class="w-24 h-[1px] bg-naranja my-4"></div>
+      <p class="text-xs text-acero/50 tracking-wider">PLOTTIER, NEUQUÉN — ARGENTINA</p>
+    </div>
+  </div>
+
+</body>
+</html>
