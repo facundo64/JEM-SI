@@ -10,27 +10,27 @@ export default function Gallery() {
 
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?w=1200&q=80",
+      url: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1200",
       alt: "Estructura metálica en construcción",
       span: "md:col-span-2 md:row-span-2",
     },
     {
-      url: "https://images.unsplash.com/photo-1504307651254-35680f35aa9e?w=800&q=80",
+      url: "https://images.pexels.com/photos/2381463/pexels-photo-2381463.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Detalle de soldadura",
       span: "md:col-span-1 md:row-span-1",
     },
     {
-      url: "https://images.unsplash.com/photo-1621252179027-94459d278660?w=800&q=80",
+      url: "https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Vigas de acero",
       span: "md:col-span-1 md:row-span-2",
     },
     {
-      url: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=800&q=80",
+      url: "https://images.pexels.com/photos/1117452/pexels-photo-1117452.jpeg?auto=compress&cs=tinysrgb&w=800",
       alt: "Montaje industrial",
       span: "md:col-span-1 md:row-span-1",
     },
     {
-      url: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
+      url: "https://images.pexels.com/photos/2138126/pexels-photo-2138126.jpeg?auto=compress&cs=tinysrgb&w=1200",
       alt: "Fachada arquitectónica",
       span: "md:col-span-2 md:row-span-1",
     },

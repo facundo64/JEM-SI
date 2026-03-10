@@ -22,8 +22,8 @@ export default function Hero() {
         className="absolute inset-0 z-0"
       >
         <img
-          src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1920&q=80&auto=format&fit=crop"
-          alt="Estructura arquitectónica moderna"
+          src="https://images.pexels.com/photos/4513940/pexels-photo-4513940.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Construcción y montaje metalúrgico"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for text readability */}

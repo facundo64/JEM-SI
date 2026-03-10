@@ -1,10 +1,85 @@
 "use client";
 
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Clock, Wrench, Users, HardHat, Check } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import ScrollReveal from "./ScrollReveal";
 
 const statIcons = [Clock, Wrench, Users, HardHat];
+
+function useCountUp(end: number, duration: number = 2000, startCounting: boolean = false) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!startCounting) return;
+
+    let startTime: number | null = null;
+    let animationFrame: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      // Ease-out cubic for a smooth deceleration
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * end));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration, startCounting]);
+
+  return count;
+}
+
+function CountUpStat({ value, label, Icon, delay }: { value: string; label: string; Icon: React.ComponentType<{ size?: number; className?: string; strokeWidth?: number }>; delay: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Parse numeric value and suffix (e.g. "500+" → 500 and "+")
+  const numericPart = parseInt(value.replace(/[^0-9]/g, ""), 10);
+  const suffix = value.replace(/[0-9]/g, "");
+  const animatedValue = useCountUp(numericPart, 2000, isVisible);
+
+  return (
+    <ScrollReveal delay={delay}>
+      <div ref={ref} className="flex flex-col items-center text-center group">
+        <div className="mb-6 text-acero/20 group-hover:text-acero transition-colors duration-500">
+          <Icon size={28} strokeWidth={1} />
+        </div>
+        <div
+          className="text-5xl font-light text-acero mb-3 tracking-widest"
+          style={{ fontFamily: "var(--font-inter)" }}
+        >
+          {isVisible ? `${animatedValue}${suffix}` : `0${suffix}`}
+        </div>
+        <div
+          className="text-[10px] text-acero/40 font-medium tracking-[0.3em] uppercase"
+          style={{ fontFamily: "var(--font-inter)" }}
+        >
+          {label}
+        </div>
+      </div>
+    </ScrollReveal>
+  );
+}
 
 export default function About() {
   const { dict } = useLanguage();
@@ -75,30 +150,18 @@ export default function About() {
             </ScrollReveal>
           </div>
 
-          {/* Stats grid */}
+          {/* Stats grid with animated counters */}
           <div className="grid grid-cols-2 gap-12 sm:gap-16">
             {statsArray.map((stat, i) => {
               const Icon = statIcons[i];
               return (
-                <ScrollReveal key={i} delay={i * 0.1}>
-                  <div className="flex flex-col items-center text-center group">
-                    <div className="mb-6 text-acero/20 group-hover:text-acero transition-colors duration-500">
-                      <Icon size={28} strokeWidth={1} />
-                    </div>
-                    <div
-                      className="text-5xl font-light text-acero mb-3 tracking-widest"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
-                      {stat.value}
-                    </div>
-                    <div
-                      className="text-[10px] text-acero/40 font-medium tracking-[0.3em] uppercase"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
-                      {stat.label}
-                    </div>
-                  </div>
-                </ScrollReveal>
+                <CountUpStat
+                  key={i}
+                  value={stat.value}
+                  label={stat.label}
+                  Icon={Icon}
+                  delay={i * 0.1}
+                />
               );
             })}
           </div>
@@ -107,3 +170,4 @@ export default function About() {
     </section>
   );
 }
+

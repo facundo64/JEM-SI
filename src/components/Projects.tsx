@@ -43,16 +43,14 @@ export default function Projects() {
                 {/* Image */}
                 <div className="relative aspect-[4/5] bg-gris-claro overflow-hidden mb-8 shadow-sm group-hover:shadow-2xl transition-shadow duration-[1s]">
                   <img
-                    src={`https://images.unsplash.com/photo-${
-                      [
-                        "1504307651254-35680f356dfd",
-                        "1581094794329-c8112a89af12",
-                        "1558618666-fcd25c85f82e",
-                        "1513467535987-db81bc0d0cd0",
-                        "1590644365607-1c5a6f0e5b5e",
-                        "1541888946425-d81bb19240f5",
-                      ][i]
-                    }?w=800&q=80&auto=format&fit=crop`}
+                    src={[
+                      "https://images.pexels.com/photos/2138126/pexels-photo-2138126.jpeg?auto=compress&cs=tinysrgb&w=800", // Trabajadores en estructura
+                      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=800", // Nave industrial terminada
+                      "https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800", // Construcción metálica
+                      "https://images.pexels.com/photos/157811/pexels-photo-157811.jpeg?auto=compress&cs=tinysrgb&w=800", // Ambiente taller
+                      "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=800", // Interior nave
+                      "https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800", // Ingeniería civil vigas
+                    ][i]}
                     alt={project.title}
                     className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1s] ease-out"
                   />
