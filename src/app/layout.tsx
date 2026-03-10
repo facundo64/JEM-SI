@@ -16,6 +16,8 @@ const inter = Inter({
   display: "swap",
 });
 
+import SmoothScroll from "@/components/SmoothScroll";
+
 export const metadata: Metadata = {
   title: "JEM-SI | Construcción y Montaje Metalúrgico",
   description:
@@ -50,7 +52,9 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} antialiased`}
       >
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
