@@ -52,7 +52,7 @@ export default function Preloader() {
 
             <motion.p
               className="text-[10px] tracking-[0.5em] uppercase mt-3 text-acero/40"
-              style={{ fontFamily: "var(--font-rajdhani)" }}
+              style={{ fontFamily: "var(--font-inter)" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.9 }}

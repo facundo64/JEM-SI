@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/language-context";
 const sectionIds = [
   "services",
   "about",
-  "process",
+  "gallery",
   "projects",
   "values",
   "contact",
@@ -22,7 +22,7 @@ export default function Navbar() {
   const navLabels = [
     dict.nav.services,
     dict.nav.about,
-    dict.nav.process,
+    dict.nav.gallery,
     dict.nav.projects,
     dict.nav.values,
     dict.nav.contact,
@@ -43,15 +43,15 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 1.8 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      transition={{ duration: 0.5, delay: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-gris-medio shadow-sm"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "bg-white/90 backdrop-blur-md border-b-[0.5px] border-black/5"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
             href="#"
@@ -61,7 +61,7 @@ export default function Navbar() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <span className="text-acero font-black text-2xl tracking-tighter group-hover:text-acero-light transition-colors">
+            <span className="text-acero font-light text-2xl tracking-[0.1em] group-hover:opacity-70 transition-opacity">
               JEM-SI
             </span>
           </a>
@@ -73,7 +73,7 @@ export default function Navbar() {
                 key={id}
                 onClick={() => handleNavClick(id)}
                 className="text-xs text-acero/50 hover:text-acero transition-colors duration-200 font-semibold tracking-widest uppercase"
-                style={{ fontFamily: "var(--font-rajdhani)" }}
+                style={{ fontFamily: "var(--font-inter)" }}
               >
                 {navLabels[i]}
               </button>
@@ -117,7 +117,7 @@ export default function Navbar() {
                   key={id}
                   onClick={() => handleNavClick(id)}
                   className="text-left px-3 py-3 text-acero/60 hover:text-acero hover:bg-gris-claro transition-all duration-150 text-sm font-semibold tracking-wide uppercase"
-                  style={{ fontFamily: "var(--font-rajdhani)" }}
+                  style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {navLabels[i]}
                 </button>

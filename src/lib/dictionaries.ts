@@ -3,7 +3,7 @@ export const dictionaries = {
     nav: {
       services: "Servicios",
       about: "Empresa",
-      process: "Proceso",
+      gallery: "Galería",
       projects: "Proyectos",
       values: "Valores",
       contact: "Contacto",
@@ -96,49 +96,11 @@ export const dictionaries = {
         ],
       },
     },
-    methodology: {
-      badge: "Proceso de Trabajo",
-      title: "Cómo Trabajamos",
+    gallery: {
+      badge: "Galería",
+      title: "Nuestro Trabajo",
       subtitle:
-        "Un proceso claro y eficiente de principio a fin, para que tu proyecto avance sin sorpresas.",
-      steps: [
-        {
-          number: "01",
-          title: "Consulta Inicial",
-          description:
-            "Recepción de planos, relevamiento técnico y análisis integral del proyecto.",
-        },
-        {
-          number: "02",
-          title: "Cotización",
-          description:
-            "Presupuesto detallado con desglose de materiales, mano de obra y tiempos.",
-        },
-        {
-          number: "03",
-          title: "Planificación",
-          description:
-            "Definición de cronograma, logística de materiales y recursos asignados.",
-        },
-        {
-          number: "04",
-          title: "Fabricación",
-          description:
-            "Producción en taller propio con control de calidad permanente en cada etapa.",
-        },
-        {
-          number: "05",
-          title: "Montaje",
-          description:
-            "Instalación en obra con equipo técnico especializado y supervisión directa.",
-        },
-        {
-          number: "06",
-          title: "Entrega",
-          description:
-            "Verificación final, documentación técnica, garantía y soporte post-entrega.",
-        },
-      ],
+        "Una selección visual de nuestra artesanía en metal e instalaciones arquitectónicas.",
     },
     projects: {
       badge: "Portfolio",
@@ -243,7 +205,7 @@ export const dictionaries = {
         items: [
           "Servicios",
           "Empresa",
-          "Proceso",
+          "Galería",
           "Proyectos",
           "Valores",
           "Contacto",
@@ -260,7 +222,7 @@ export const dictionaries = {
     nav: {
       services: "Services",
       about: "Company",
-      process: "Process",
+      gallery: "Gallery",
       projects: "Projects",
       values: "Values",
       contact: "Contact",
@@ -353,49 +315,11 @@ export const dictionaries = {
         ],
       },
     },
-    methodology: {
-      badge: "Work Process",
-      title: "How We Work",
+    gallery: {
+      badge: "Gallery",
+      title: "Our Work",
       subtitle:
-        "A clear and efficient process from start to finish, so your project advances without surprises.",
-      steps: [
-        {
-          number: "01",
-          title: "Initial Consultation",
-          description:
-            "Blueprint reception, technical surveying, and comprehensive project analysis.",
-        },
-        {
-          number: "02",
-          title: "Quotation",
-          description:
-            "Detailed estimate with breakdown of materials, labor, and timelines.",
-        },
-        {
-          number: "03",
-          title: "Planning",
-          description:
-            "Schedule definition, materials logistics, and allocated resources.",
-        },
-        {
-          number: "04",
-          title: "Fabrication",
-          description:
-            "Production in our own workshop with permanent quality control at every stage.",
-        },
-        {
-          number: "05",
-          title: "Assembly",
-          description:
-            "On-site installation with specialized technical team and direct supervision.",
-        },
-        {
-          number: "06",
-          title: "Delivery",
-          description:
-            "Final verification, technical documentation, warranty, and post-delivery support.",
-        },
-      ],
+        "A visual selection of our metalcraft and architectural installations.",
     },
     projects: {
       badge: "Portfolio",
@@ -501,7 +425,7 @@ export const dictionaries = {
         items: [
           "Services",
           "Company",
-          "Process",
+          "Gallery",
           "Projects",
           "Values",
           "Contact",

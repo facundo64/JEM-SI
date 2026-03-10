@@ -51,7 +51,7 @@ export default function Contact() {
         <ScrollReveal className="flex justify-center mb-5">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 border border-gris-medio text-acero/40 text-xs font-bold tracking-[0.3em] uppercase"
-            style={{ fontFamily: "var(--font-rajdhani)" }}
+            style={{ fontFamily: "var(--font-inter)" }}
           >
             {c.badge}
           </span>
@@ -66,37 +66,37 @@ export default function Contact() {
         <ScrollReveal delay={0.1}>
           <p
             className="text-acero/40 text-center max-w-xl mx-auto mb-20 text-lg"
-            style={{ fontFamily: "var(--font-rajdhani)" }}
+            style={{ fontFamily: "var(--font-inter)" }}
           >
             {c.subtitle}
           </p>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Form */}
-          <ScrollReveal direction="left" distance={25}>
-            <div className="bg-white border border-gris-medio p-8">
+          <ScrollReveal direction="left" distance={20}>
+            <div className="bg-blanco p-8 lg:p-12 border border-acero/10">
               {submitted ? (
-                <div className="flex flex-col items-center justify-center h-full min-h-[300px] gap-4 text-center">
-                  <div className="p-4 bg-gris-claro border border-gris-medio">
-                    <CheckCircle size={36} className="text-acero/40" />
+                <div className="flex flex-col items-center justify-center h-full min-h-[400px] gap-6 text-center">
+                  <div className="mb-4">
+                    <CheckCircle size={48} strokeWidth={1} className="text-acero/30" />
                   </div>
-                  <h3 className="text-xl font-bold text-acero tracking-tight">
+                  <h3 className="text-xl font-medium text-acero tracking-widest uppercase">
                     {c.form.successTitle}
                   </h3>
                   <p
-                    className="text-acero/40 text-sm"
-                    style={{ fontFamily: "var(--font-rajdhani)" }}
+                    className="text-acero/50 text-sm leading-[2]"
+                    style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {c.form.successText}
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
                     <label
-                      className="block text-acero/40 text-xs font-bold mb-2 tracking-[0.2em] uppercase"
-                      style={{ fontFamily: "var(--font-rajdhani)" }}
+                      className="block text-acero/30 text-[10px] font-bold mb-3 tracking-[0.3em] uppercase"
+                      style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {c.form.name}
                     </label>
@@ -106,17 +106,17 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className={inputClasses}
-                      style={{ fontFamily: "var(--font-rajdhani)" }}
+                      className="w-full bg-transparent border-b border-acero/10 px-0 py-3 text-acero placeholder-acero/20 text-sm focus:outline-none focus:border-acero transition-colors"
+                      style={{ fontFamily: "var(--font-inter)" }}
                       placeholder={c.form.name}
                     />
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-5">
+                  <div className="grid sm:grid-cols-2 gap-8">
                     <div>
                       <label
-                        className="block text-acero/40 text-xs font-bold mb-2 tracking-[0.2em] uppercase"
-                        style={{ fontFamily: "var(--font-rajdhani)" }}
+                        className="block text-acero/30 text-[10px] font-bold mb-3 tracking-[0.3em] uppercase"
+                        style={{ fontFamily: "var(--font-inter)" }}
                       >
                         {c.form.email}
                       </label>
@@ -126,15 +126,15 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className={inputClasses}
-                        style={{ fontFamily: "var(--font-rajdhani)" }}
+                        className="w-full bg-transparent border-b border-acero/10 px-0 py-3 text-acero placeholder-acero/20 text-sm focus:outline-none focus:border-acero transition-colors"
+                        style={{ fontFamily: "var(--font-inter)" }}
                         placeholder="email@ejemplo.com"
                       />
                     </div>
                     <div>
                       <label
-                        className="block text-acero/40 text-xs font-bold mb-2 tracking-[0.2em] uppercase"
-                        style={{ fontFamily: "var(--font-rajdhani)" }}
+                        className="block text-acero/30 text-[10px] font-bold mb-3 tracking-[0.3em] uppercase"
+                        style={{ fontFamily: "var(--font-inter)" }}
                       >
                         {c.form.phone}
                       </label>
@@ -143,8 +143,8 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className={inputClasses}
-                        style={{ fontFamily: "var(--font-rajdhani)" }}
+                        className="w-full bg-transparent border-b border-acero/10 px-0 py-3 text-acero placeholder-acero/20 text-sm focus:outline-none focus:border-acero transition-colors"
+                        style={{ fontFamily: "var(--font-inter)" }}
                         placeholder="+54 299..."
                       />
                     </div>
@@ -152,8 +152,8 @@ export default function Contact() {
 
                   <div>
                     <label
-                      className="block text-acero/40 text-xs font-bold mb-2 tracking-[0.2em] uppercase"
-                      style={{ fontFamily: "var(--font-rajdhani)" }}
+                      className="block text-acero/30 text-[10px] font-bold mb-3 tracking-[0.3em] uppercase"
+                      style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {c.form.message}
                     </label>
@@ -163,20 +163,20 @@ export default function Contact() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className={`${inputClasses} resize-none`}
-                      style={{ fontFamily: "var(--font-rajdhani)" }}
+                      className="w-full bg-transparent border-b border-acero/10 px-0 py-3 text-acero placeholder-acero/20 text-sm focus:outline-none focus:border-acero transition-colors resize-none"
+                      style={{ fontFamily: "var(--font-inter)" }}
                       placeholder={c.form.messagePlaceholder}
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="group w-full flex items-center justify-center gap-2 px-6 py-4 bg-acero hover:bg-acero-light text-white font-bold transition-all duration-200 text-sm tracking-wider uppercase"
+                    className="group w-full flex items-center justify-center gap-3 px-8 py-5 border border-acero text-acero font-medium transition-all duration-300 hover:bg-acero hover:text-blanco text-[11px] tracking-[0.2em] uppercase mt-4"
                   >
                     {c.form.send}
                     <Send
-                      size={15}
-                      className="group-hover:translate-x-0.5 transition-transform"
+                      size={14}
+                      className="group-hover:translate-x-1 transition-transform"
                     />
                   </button>
                 </form>
@@ -185,28 +185,28 @@ export default function Contact() {
           </ScrollReveal>
 
           {/* Info */}
-          <ScrollReveal direction="right" distance={25} delay={0.1}>
-            <div className="flex flex-col gap-4">
+          <ScrollReveal direction="right" distance={20} delay={0.1}>
+            <div className="flex flex-col gap-6 h-full">
               {infoItems.map((info, i) => {
                 const Icon = infoIcons[i];
                 return (
                   <div
                     key={i}
-                    className="flex items-center gap-4 bg-white border border-gris-medio p-5 hover:border-acero/15 transition-colors duration-200"
+                    className="flex items-start gap-6 bg-blanco border border-acero/10 p-8 hover:border-acero/30 transition-colors duration-500"
                   >
-                    <div className="p-2.5 bg-gris-claro border border-gris-medio shrink-0">
-                      <Icon size={18} className="text-acero/40" />
+                    <div className="mt-1 text-acero/30">
+                      <Icon size={24} strokeWidth={1} />
                     </div>
                     <div>
                       <div
-                        className="text-xs text-acero/30 font-bold tracking-[0.2em] uppercase mb-0.5"
-                        style={{ fontFamily: "var(--font-rajdhani)" }}
+                        className="text-[10px] text-acero/40 font-semibold tracking-[0.3em] uppercase mb-2"
+                        style={{ fontFamily: "var(--font-inter)" }}
                       >
                         {info.label}
                       </div>
                       <div
-                        className="text-acero/70 text-sm font-semibold"
-                        style={{ fontFamily: "var(--font-rajdhani)" }}
+                        className="text-acero/80 text-sm font-medium leading-relaxed"
+                        style={{ fontFamily: "var(--font-inter)" }}
                       >
                         {info.value}
                       </div>
@@ -214,44 +214,6 @@ export default function Contact() {
                   </div>
                 );
               })}
-
-              {/* Map placeholder */}
-              <div className="flex-1 min-h-[180px] bg-white border border-gris-medio overflow-hidden relative group hover:border-acero/15 transition-colors duration-200">
-                <div className="absolute inset-0 bg-gris-claro">
-                  <svg
-                    className="absolute inset-0 w-full h-full opacity-[0.06]"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <pattern
-                        id="map-grid"
-                        x="0"
-                        y="0"
-                        width="30"
-                        height="30"
-                        patternUnits="userSpaceOnUse"
-                      >
-                        <path
-                          d="M 30 0 L 0 0 0 30"
-                          fill="none"
-                          stroke="#2C2C2C"
-                          strokeWidth="0.5"
-                        />
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#map-grid)" />
-                  </svg>
-                </div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center p-4">
-                  <MapPin size={24} className="text-acero/25" />
-                  <p
-                    className="text-acero/30 text-xs font-semibold tracking-wider"
-                    style={{ fontFamily: "var(--font-rajdhani)" }}
-                  >
-                    {c.mapLabel}
-                  </p>
-                </div>
-              </div>
             </div>
           </ScrollReveal>
         </div>

@@ -13,95 +13,78 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col">
-      {/* Navbar spacer */}
-      <div className="h-16" />
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-acero-dark">
+      {/* Fullscreen Background Image */}
+      <motion.div
+        initial={{ scale: 1.05 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="absolute inset-0 z-0"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1920&q=80&auto=format&fit=crop"
+          alt="Estructura arquitectónica moderna"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+      </motion.div>
 
-      {/* Content area */}
-      <div className="flex-1 flex flex-col lg:flex-row">
-        {/* Left: text content */}
-        <div className="flex-1 flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-24 py-16 lg:py-0">
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 2.0 }}
-            className="text-[11px] tracking-[0.4em] uppercase text-acero/40 font-semibold mb-6"
-            style={{ fontFamily: "var(--font-rajdhani)" }}
-          >
-            {h.badge}
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.1 }}
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.9] mb-6"
-          >
-            <span className="text-acero block">{h.title}</span>
-            <span className="text-acero/20 block">{h.titleHighlight}</span>
-          </motion.h1>
-
-          {/* Thin accent line */}
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: 48 }}
-            transition={{ duration: 0.4, delay: 2.3 }}
-            className="h-px bg-naranja mb-6"
-          />
-
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 2.4 }}
-            className="text-acero/45 text-base sm:text-lg max-w-lg leading-relaxed mb-10"
-            style={{ fontFamily: "var(--font-rajdhani)" }}
-          >
-            {h.subtitle}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 2.6 }}
-            className="flex flex-col sm:flex-row items-start gap-3"
-          >
-            <button
-              onClick={() => scrollTo("services")}
-              className="group flex items-center gap-2 px-7 py-3.5 bg-acero hover:bg-acero-light text-white font-bold transition-all duration-200 text-sm tracking-wider uppercase"
-            >
-              {h.ctaPrimary}
-              <ArrowRight
-                size={15}
-                className="group-hover:translate-x-0.5 transition-transform"
-              />
-            </button>
-
-            <button
-              onClick={() => scrollTo("contact")}
-              className="flex items-center gap-2 px-7 py-3.5 border border-gris-medio hover:border-acero/30 text-acero/60 hover:text-acero font-bold transition-all duration-200 text-sm tracking-wider uppercase"
-            >
-              {h.ctaSecondary}
-            </button>
-          </motion.div>
-        </div>
-
-        {/* Right: hero image */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2.0 }}
-          className="flex-1 relative min-h-[50vh] lg:min-h-0"
+      {/* Content overlays */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto w-full mt-16">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-[11px] tracking-[0.5em] uppercase text-white/70 font-medium mb-6"
+          style={{ fontFamily: "var(--font-inter)" }}
         >
-          {/* Placeholder image — replace with real project photo */}
-          <div className="absolute inset-0 bg-gris-claro">
-            <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
-              alt="Estructura metálica en construcción"
-              className="w-full h-full object-cover"
+          {h.badge}
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.6 }}
+          className="text-5xl sm:text-7xl lg:text-8xl xl:text-[8rem] font-light tracking-tight leading-[1.05] mb-8 text-white drop-shadow-lg"
+        >
+          <span className="block">{h.title}</span>
+          <span className="block mt-2 italic text-white/90">{h.titleHighlight}</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-white/80 text-sm sm:text-base lg:text-lg max-w-2xl leading-[1.8] mb-12 drop-shadow-md font-light"
+          style={{ fontFamily: "var(--font-inter)" }}
+        >
+          {h.subtitle}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="flex flex-col sm:flex-row items-center gap-6"
+        >
+          <button
+            onClick={() => scrollTo("services")}
+            className="group flex items-center gap-3 px-10 py-5 bg-white text-acero font-medium transition-all duration-300 hover:bg-white/90 text-[11px] tracking-[0.2em] uppercase"
+          >
+            {h.ctaPrimary}
+            <ArrowRight
+              size={14}
+              className="group-hover:translate-x-1 transition-transform"
             />
-            {/* Very subtle overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/20" />
-          </div>
+          </button>
+
+          <button
+            onClick={() => scrollTo("contact")}
+            className="group flex items-center gap-3 px-10 py-5 border border-white text-white font-medium transition-all duration-300 hover:bg-white hover:text-acero text-[11px] tracking-[0.2em] uppercase"
+          >
+            {h.ctaSecondary}
+          </button>
         </motion.div>
       </div>
 
@@ -109,18 +92,18 @@ export default function Hero() {
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 3.0, duration: 0.5 }}
+        transition={{ delay: 2.0, duration: 0.5 }}
         onClick={() => scrollTo("services")}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-acero/25 hover:text-acero/50 transition-colors"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 hover:text-white transition-colors z-10"
         aria-label="Scroll down"
       >
         <span
-          className="text-[10px] tracking-[0.3em] uppercase font-semibold"
-          style={{ fontFamily: "var(--font-rajdhani)" }}
+          className="text-[10px] tracking-[0.3em] uppercase font-light"
+          style={{ fontFamily: "var(--font-inter)" }}
         >
           {h.scrollLabel}
         </span>
-        <ChevronDown size={18} className="animate-bounce" />
+        <ChevronDown size={20} className="animate-bounce" />
       </motion.button>
     </section>
   );

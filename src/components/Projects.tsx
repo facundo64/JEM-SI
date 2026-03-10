@@ -14,34 +14,34 @@ export default function Projects() {
         <ScrollReveal className="flex justify-center mb-5">
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 border border-gris-medio text-acero/40 text-xs font-bold tracking-[0.3em] uppercase"
-            style={{ fontFamily: "var(--font-rajdhani)" }}
+            style={{ fontFamily: "var(--font-inter)" }}
           >
             {p.badge}
           </span>
         </ScrollReveal>
 
         <ScrollReveal delay={0.05}>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-acero text-center mb-4 tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-acero text-center mb-16 tracking-widest">
             {p.title}
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
           <p
-            className="text-acero/40 text-center max-w-2xl mx-auto mb-20 text-lg"
-            style={{ fontFamily: "var(--font-rajdhani)" }}
+            className="text-acero/50 text-center max-w-2xl mx-auto mb-32 text-sm leading-[1.8]"
+            style={{ fontFamily: "var(--font-inter)" }}
           >
             {p.subtitle}
           </p>
         </ScrollReveal>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Gallery Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-16 lg:gap-24">
           {p.items.map((project: { title: string; category: string; year: string }, i: number) => (
-            <ScrollReveal key={i} delay={(i % 3) * 0.08}>
-              <div className="group bg-white border border-gris-medio overflow-hidden hover:border-acero/20 transition-all duration-300">
-                {/* Image placeholder */}
-                <div className="relative h-52 bg-gris-claro overflow-hidden">
+            <ScrollReveal key={i} delay={(i % 3) * 0.15}>
+              <div className="group cursor-pointer">
+                {/* Image */}
+                <div className="relative aspect-[4/5] bg-gris-claro overflow-hidden mb-8 shadow-sm group-hover:shadow-2xl transition-shadow duration-[1s]">
                   <img
                     src={`https://images.unsplash.com/photo-${
                       [
@@ -52,31 +52,31 @@ export default function Projects() {
                         "1590644365607-1c5a6f0e5b5e",
                         "1541888946425-d81bb19240f5",
                       ][i]
-                    }?w=600&q=75`}
+                    }?w=800&q=80&auto=format&fit=crop`}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1s] ease-out"
                   />
 
-                  {/* Year */}
+                  {/* Category overlay */}
                   <div
-                    className="absolute top-3 right-3 px-2.5 py-1 bg-white/90 backdrop-blur-sm text-acero/50 text-xs font-bold tracking-wider"
-                    style={{ fontFamily: "var(--font-rajdhani)" }}
+                    className="absolute bottom-6 left-6 text-white/90 text-[10px] tracking-[0.2em] uppercase font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{ fontFamily: "var(--font-inter)" }}
                   >
-                    {project.year}
+                    {project.category}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
-                  <span
-                    className="inline-block px-2.5 py-1 bg-gris-claro border border-gris-medio text-acero/40 text-xs font-bold mb-3 tracking-wider uppercase"
-                    style={{ fontFamily: "var(--font-rajdhani)" }}
-                  >
-                    {project.category}
-                  </span>
-                  <h3 className="text-acero font-bold text-base leading-snug group-hover:text-acero/70 transition-colors duration-200 tracking-tight">
+                <div className="flex items-baseline justify-between">
+                  <h3 className="text-acero font-medium text-sm tracking-wide group-hover:text-acero/60 transition-colors duration-500">
                     {project.title}
                   </h3>
+                  <span
+                    className="text-acero/40 text-xs font-light tracking-widest"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    {project.year}
+                  </span>
                 </div>
               </div>
             </ScrollReveal>
