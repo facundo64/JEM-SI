@@ -18,6 +18,8 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,9 +27,29 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Error al enviar");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Error al enviar el mensaje. Intenta de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const infoItems = [c.info.location, c.info.email, c.info.phone, c.info.hours];
@@ -171,14 +193,33 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="group w-full flex items-center justify-center gap-3 px-8 py-5 border border-acero text-acero font-medium transition-all duration-300 hover:bg-acero hover:text-blanco text-[11px] tracking-[0.2em] uppercase mt-4"
+                    disabled={loading}
+                    className={`group w-full flex items-center justify-center gap-3 px-8 py-5 border border-acero text-acero font-medium transition-all duration-300 hover:bg-acero hover:text-blanco text-[11px] tracking-[0.2em] uppercase mt-4 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
-                    {c.form.send}
-                    <Send
-                      size={14}
-                      className="group-hover:translate-x-1 transition-transform"
-                    />
+                    {loading ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        {c.form.send}
+                        <Send
+                          size={14}
+                          className="group-hover:translate-x-1 transition-transform"
+                        />
+                      </>
+                    )}
                   </button>
+
+                  {error && (
+                    <p className="text-red-500 text-xs mt-4 text-center" style={{ fontFamily: "var(--font-inter)" }}>
+                      {error}
+                    </p>
+                  )}
                 </form>
               )}
             </div>

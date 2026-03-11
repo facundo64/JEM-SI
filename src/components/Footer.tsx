@@ -7,7 +7,7 @@ import ScrollReveal from "./ScrollReveal";
 const sectionIds = [
   "services",
   "about",
-  "process",
+  "gallery",
   "projects",
   "values",
   "contact",
